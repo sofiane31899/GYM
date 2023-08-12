@@ -5,13 +5,17 @@ import { BsChevronDown } from "react-icons/bs";
 import ScrollerImages from "./ScrollerImages";
 import soutif from "./../assets/soutif.jpg";
 import dos from "./../assets/dos.png";
+import men from "../assets/men.jpg";
+import men2 from "../assets/men2.png";
+
+import { Men, Woman } from "../constants/Menu";
 
 function PhoneMenu() {
   const [openSection, setOpenSection] = useState(0);
 
   return (
     <div>
-      <nav className="pb-2 fixed top-0 left-0 w-full z-40">
+      <nav className="pb-2 fixed bg-white top-0 left-0 w-full z-40">
         <div className="flex justify-between items-center px-5 py-2">
           <div className="flex items-center">
             <div>
@@ -66,7 +70,16 @@ function PhoneMenu() {
             ACCESSORIES
           </p>
         </div>
-        <ScrollerImages images={[soutif, dos]} title={"NEW RELEASES"} />
+        {/* <ScrollerImages
+          images={[soutif, dos]}
+          title={"NEW RELEASES"}
+          menu={Woman}
+        /> */}
+        <ScrollerImages
+          images={[men, men2]}
+          title={"NEW RELEASES"}
+          menu={Men}
+        />
       </div>
     </div>
   );
