@@ -11,11 +11,11 @@ import dumble from "./../assets/dumbles.jpg";
 
 import { Men, Woman, accessories } from "../constants/Menu";
 
-function PhoneMenu() {
+function PhoneMenu({ setOpenMenu }) {
   const [openSection, setOpenSection] = useState(0);
 
   return (
-    <div className="w-full ">
+    <div className="w-full lg:hidden ">
       <nav className="pb-2 fixed bg-white top-0 left-0 w-full z-40">
         <div className="flex justify-between items-center px-5 py-2">
           <div className="flex items-center">
@@ -29,7 +29,10 @@ function PhoneMenu() {
             </div>
           </div>
           <div>
-            <AiOutlineClose className="text-3xl font-light cursor-pointer" />
+            <AiOutlineClose
+              onClick={() => setOpenMenu(false)}
+              className="text-3xl font-light cursor-pointer"
+            />
           </div>
         </div>
         <div className="px-5 h-[50px] text-lg flex  justify-start items-center">

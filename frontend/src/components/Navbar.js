@@ -9,9 +9,13 @@ import {
   BiUser,
 } from "react-icons/bi";
 import PhoneMenu from "./PhoneMenu";
+import PcMenu from "./PcMenu";
+import { Men, Woman, accessories } from "../constants/Menu";
 
 function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
+  const [openSection, setOpenSection] = useState(3);
+  console.log("open", openSection);
   return (
     <div>
       <nav className=" border-b  flex justify-between items-center  lg:items-center h-[70px] w-full px-5 lg:px-16">
@@ -34,10 +38,30 @@ function Navbar() {
 
           <BiShoppingBag className="cursor-pointer" />
         </div>
-        <div className="font-bold hidden text-sm w-[280px] lg:flex justify-between items-center ">
-          <p className="cursor-pointer">WOMEN</p>
-          <p className="cursor-pointer">MEN</p>
-          <p className="cursor-pointer">ACCESSORIES</p>
+        <div className="font-bold hidden text-sm w-[280px] lg:flex  justify-center items-center ">
+          <div
+            className="group cursor-pointer px-[40px]  "
+            onMouseEnter={() => setOpenSection(0)}
+            onMouseLeave={() => setOpenSection(3)}
+          >
+            <p className="py-6 group-hover:border-b-2  border-black">WOMEN</p>
+          </div>
+          <p
+            className="cursor-pointer  px-[40px] group "
+            onMouseEnter={() => setOpenSection(1)}
+            onMouseLeave={() => setOpenSection(3)}
+          >
+            <p className="py-6 group-hover:border-b-2  border-black"> MEN</p>
+          </p>
+          <p
+            className="cursor-pointer  px-[40px] group"
+            onMouseEnter={() => setOpenSection(2)}
+            onMouseLeave={() => setOpenSection(3)}
+          >
+            <p className="py-6 group-hover:border-b-2  border-black">
+              ACCESSORIES
+            </p>
+          </p>
         </div>
         <div className="lg:flex hidden text-2xl space-x-4">
           <BiSearch className="cursor-pointer" />
@@ -47,6 +71,16 @@ function Navbar() {
         </div>
       </nav>
       {openMenu && <PhoneMenu setOpenMenu={setOpenMenu} />}
+      {openSection == 0 && (
+        <PcMenu menu={Woman} setOpenSection={setOpenSection} type={0} />
+      )}
+      {openSection == 1 && (
+        <PcMenu menu={Men} setOpenSection={setOpenSection} type={1} />
+      )}
+
+      {openSection == 2 && (
+        <PcMenu menu={accessories} setOpenSection={setOpenSection} type={2} />
+      )}
     </div>
   );
 }
