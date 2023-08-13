@@ -11,13 +11,17 @@ import dumble from "./../assets/dumbles.jpg";
 
 import { Men, Woman, accessories } from "../constants/Menu";
 
-function PhoneMenu({ setOpenMenu }) {
+function PhoneMenu({ setOpenMenu, openMenu }) {
   const [openSection, setOpenSection] = useState(0);
 
   return (
-    <div className="w-full lg:hidden ">
-      <nav className="pb-2 fixed bg-white top-0 left-0 w-full z-40">
-        <div className="flex justify-between items-center px-5 py-2">
+    <div
+      className={` absolute top-0 left-0 bg-white  ease-in-out duration-1000 w-full  lg:hidden ${
+        openMenu ? "translate-x-0 " : "translate-x-full"
+      }  `}
+    >
+      <nav className="pb-2 sticky top-0 left-0 bg-white w-full z-40">
+        <div className={`  flex justify-between items-center px-5 py-2`}>
           <div className="flex items-center">
             <div>
               <BiHeart className="cursor-pointer text-xl" />
@@ -48,8 +52,12 @@ function PhoneMenu({ setOpenMenu }) {
         </div>
       </nav>
 
-      <div className="w-full  bg-neutral-100 ">
-        <div className="font-bold bg-white pt-[80px] text-neutral-500   text-sm  space-x-8 mb-4 flex  justify-center items-center ">
+      <div
+        className={` opacity-${
+          openMenu ? "100" : "0"
+        } transition-opacity ease-in-out duration-1000 w-full  bg-neutral-100`}
+      >
+        <div className="font-bold bg-white  text-neutral-500   text-sm  space-x-8 mb-4 flex  justify-center items-center ">
           <p
             className={`${
               openSection == 0 && "border-b-2 border-black text-black"

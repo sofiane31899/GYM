@@ -70,7 +70,9 @@ function Navbar() {
           <BiShoppingBag className="cursor-pointer" />
         </div>
       </nav>
-      {openMenu && <PhoneMenu setOpenMenu={setOpenMenu} />}
+
+      <PhoneMenu setOpenMenu={setOpenMenu} openMenu={openMenu} />
+
       {openSection == 0 && (
         <PcMenu menu={Woman} setOpenSection={setOpenSection} type={0} />
       )}

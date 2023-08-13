@@ -67,9 +67,12 @@ function ScrollerImages({ images, title, menu }) {
               <div className="flex justify-between px-5 w-full items-center absolute left-0 bottom-3 ">
                 <p className="font-bold text-white text-xl ">{title}</p>
                 {/* <div className="p-2 bg-white animate-pulse rounded-full "> */}
-                <p className="p-2 bg-white  cursor-pointer rounded-full">
-                  <HiOutlineChevronRight className="text-xl" />
-                </p>
+
+                <div class="flex justify-center items-center ">
+                  <div class="h-12 w-12 bg-white rounded-full flex justify-center items-center animate-pulse ">
+                    <HiOutlineChevronRight />
+                  </div>
+                </div>
                 {/* </div> */}
               </div>
             </div>
