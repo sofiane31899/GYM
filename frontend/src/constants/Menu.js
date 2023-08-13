@@ -92,3 +92,18 @@ export const more = [
   "Help",
   "Accessibility Statement ",
 ];
+export const accessories = {
+  "SHOP ALL": ["All Accessories", "New Releases"],
+  FOOTWEAR: ["Slides"],
+  SOCKS: [
+    "All Socks",
+    "Crew Socks",
+    "Quater Socks",
+    "No Shadow Socks",
+    "Trainer Socks",
+  ],
+  BAGS: ["All Bags", "Gym Backpacks", "Dufflel Bags", "Small Bags"],
+  UNDERWEAR: ["Women Underwear", "Men Underwear"],
+  HEADWEAR: ["All Headwear", "Caps", "Beanies", "Hair Accessories"],
+  EQUIPMENT: ["All Equipement", "Weightlifting", "Resistance Bands", "Bottles"],
+};

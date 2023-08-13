@@ -17,13 +17,15 @@ function ScrollerImages({ images, title, menu }) {
       setOpenMenu((prev) => [...prev, elem]);
     }
   };
-  const content2 = more?.map((elem) => <li>{elem}</li>);
-
-  const content = Object.keys(menu)?.map((elem, index) => (
+  const content2 = more?.map((elem) => <li key={elem}>{elem}</li>);
+  const menuObj = Object.keys(menu);
+  const content = menuObj?.map((elem, index) => (
     <div key={elem} onClick={() => menuFunction(elem)} className="w-full">
       <li
         className={`${
-          openMenu.includes(elem) ? "" : "border-b"
+          openMenu.includes(elem) || index === menuObj.length - 1
+            ? ""
+            : "border-b"
         } py-5  cursor-pointer flex justify-between items-center font-bold border-gray-300 w-full`}
       >
         {elem}
@@ -36,7 +38,7 @@ function ScrollerImages({ images, title, menu }) {
       <ul className={`${openMenu.includes(elem) ? "block" : "hidden"} px-2  `}>
         {menu[elem]?.map((elem) => (
           <li
-            className=" text-gray-600 text-sm  py-5 font-semibold border-b border-gray-300"
+            className=" text-gray-600 text-sm cursor-pointer hover:text-black  py-5 font-semibold border-b border-gray-300"
             key={elem}
           >
             {elem}
@@ -46,7 +48,7 @@ function ScrollerImages({ images, title, menu }) {
     </div>
   ));
   return (
-    <div>
+    <div className="">
       <div className=" overflow-x-scroll  scrollbar-hide ">
         <div className="flex justify-start w-max px-5 space-x-2 items-center ">
           {images.map((elem) => (
@@ -55,7 +57,11 @@ function ScrollerImages({ images, title, menu }) {
                 src={elem}
                 className="rounded-md h-[280px] w-[450px] object-cover "
               />
-              <p className="p-1 text-xs rounded-md bg-gray-100 cursor-pointer font-bold absolute top-4 left-4 ">
+              <p
+                className={`${
+                  title == "TRAINING APP" ? "hidden" : "block"
+                } p-1 text-xs rounded-md bg-gray-100 cursor-pointer font-bold absolute top-4 left-4 S`}
+              >
                 NEW
               </p>
               <div className="flex justify-between px-5 w-full items-center absolute left-0 bottom-3 ">
@@ -70,12 +76,12 @@ function ScrollerImages({ images, title, menu }) {
           ))}
         </div>
       </div>
-      <div>
+      <div className="">
         <ul className="flex flex-col items-start justify-center px-5 ">
           {content}
         </ul>
       </div>
-      <div className="bg-neutral-100 px-5 py-3 text-sm ">
+      <div className="bg-neutral-200 px-5 py-3 text-sm ">
         <h1 className="font-bold pb-2">MORE</h1>
         <ul className="font-semibold  text-neutral-600 space-y-2">
           {content2}

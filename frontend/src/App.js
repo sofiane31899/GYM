@@ -6,10 +6,9 @@ import Topnav from "./components/Topnav";
 function App() {
   return (
     <div>
-      {/* <Topnav />
+      <Topnav />
       <Navbar />
-      <ShippingMessage /> */}
-      <PhoneMenu />
+      <ShippingMessage />
     </div>
   );
 }

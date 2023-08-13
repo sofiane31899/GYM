@@ -7,14 +7,15 @@ import soutif from "./../assets/soutif.jpg";
 import dos from "./../assets/dos.png";
 import men from "../assets/men.jpg";
 import men2 from "../assets/men2.png";
+import dumble from "./../assets/dumbles.jpg";
 
-import { Men, Woman } from "../constants/Menu";
+import { Men, Woman, accessories } from "../constants/Menu";
 
 function PhoneMenu() {
   const [openSection, setOpenSection] = useState(0);
 
   return (
-    <div>
+    <div className="w-full ">
       <nav className="pb-2 fixed bg-white top-0 left-0 w-full z-40">
         <div className="flex justify-between items-center px-5 py-2">
           <div className="flex items-center">
@@ -43,8 +44,9 @@ function PhoneMenu() {
           />
         </div>
       </nav>
-      <div>
-        <div className="font-bold text-neutral-500 pt-[170px] text-sm w-full space-x-8 mb-4 flex  justify-center items-center ">
+
+      <div className="w-full  bg-neutral-100 ">
+        <div className="font-bold bg-white pt-[80px] text-neutral-500   text-sm  space-x-8 mb-4 flex  justify-center items-center ">
           <p
             className={`${
               openSection == 0 && "border-b-2 border-black text-black"
@@ -70,16 +72,30 @@ function PhoneMenu() {
             ACCESSORIES
           </p>
         </div>
-        {/* <ScrollerImages
-          images={[soutif, dos]}
-          title={"NEW RELEASES"}
-          menu={Woman}
-        /> */}
-        <ScrollerImages
-          images={[men, men2]}
-          title={"NEW RELEASES"}
-          menu={Men}
-        />
+        {openSection == 0 && (
+          <div className="w-full">
+            <ScrollerImages
+              images={[soutif, dos]}
+              title={"NEW RELEASES"}
+              menu={Woman}
+            />
+          </div>
+        )}
+        {openSection == 1 && (
+          <ScrollerImages
+            images={[men, men2]}
+            title={"NEW RELEASES"}
+            menu={Men}
+          />
+        )}
+
+        {openSection == 2 && (
+          <ScrollerImages
+            images={[dumble]}
+            title={"TRAINING APP"}
+            menu={accessories}
+          />
+        )}
       </div>
     </div>
   );
