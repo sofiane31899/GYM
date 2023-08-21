@@ -1,3 +1,4 @@
+import DownloadSection from "./components/DownloadSection";
 import Navbar from "./components/Navbar";
 import PhoneMenu from "./components/PhoneMenu";
 import ShippingMessage from "./components/ShippingMessage";
@@ -9,6 +10,7 @@ function App() {
       <Topnav />
       <Navbar />
       <ShippingMessage />
+      <DownloadSection />
     </div>
   );
 }

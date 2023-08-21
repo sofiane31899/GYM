@@ -32,7 +32,7 @@ function PcMenu({ menu, setOpenSection, type }) {
     <div
       onMouseEnter={() => setOpenSection(type)}
       onMouseLeave={() => setOpenSection(3)}
-      className="bg-white  flex items-start justify-center   h-[calc(100vh-108px)] overflow-y-hidden absolute top-[100px ] left-0 w-full "
+      className="bg-white  flex items-start justify-center   h-[calc(100vh-108px)] overflow-y-hidden z-30 absolute top-[100px ] left-0 w-full "
     >
       <div className=" grid grid-cols-4 gap-3 w-[800px] ">{content}</div>
     </div>
