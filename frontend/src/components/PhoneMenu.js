@@ -16,8 +16,8 @@ function PhoneMenu({ setOpenMenu, openMenu }) {
 
   return (
     <div
-      className={` absolute top-0 left-0 bg-white  ease-in-out duration-1000 w-full  lg:hidden ${
-        openMenu ? "translate-x-0 " : "translate-x-full"
+      className={` absolute top-0  left-0 z-30 bg-white w-full  ease-in-out duration-1000 overflow-x-hidden lg:hidden ${
+        openMenu ? "translate-x-0  " : " translate-x-full w-0   "
       }  `}
     >
       <nav className="pb-2 sticky top-0 left-0 bg-white w-full z-40">

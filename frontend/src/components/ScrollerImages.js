@@ -48,7 +48,7 @@ function ScrollerImages({ images, title, menu }) {
     </div>
   ));
   return (
-    <div className="">
+    <div className="h-max overflow-y-hidden">
       <div className=" overflow-x-scroll  scrollbar-hide ">
         <div className="flex justify-start w-max px-5 space-x-2 items-center ">
           {images.map((elem) => (
@@ -79,12 +79,12 @@ function ScrollerImages({ images, title, menu }) {
           ))}
         </div>
       </div>
-      <div className="">
+      <div className=" flex flex-col">
         <ul className="flex flex-col items-start justify-center px-5 ">
           {content}
         </ul>
       </div>
-      <div className="bg-neutral-200 px-5 py-3 text-sm ">
+      <div className="bg-neutral-200  px-5 py-3 text-sm ">
         <h1 className="font-bold pb-2">MORE</h1>
         <ul className="font-semibold  text-neutral-600 space-y-2">
           {content2}
