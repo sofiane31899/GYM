@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { BiHeart, BiSearch, BiWorld } from "react-icons/bi";
 import { BsChevronDown } from "react-icons/bs";
@@ -16,10 +16,9 @@ function PhoneMenu({ setOpenMenu, openMenu }) {
 
   return (
     <div
-      className={` absolute top-0  left-0 z-30 bg-white w-full  ease-in-out duration-1000 overflow-x-hidden lg:hidden ${
-        openMenu ? "translate-x-0  " : " translate-x-full w-0   "
-      }  `}
-    >
+      className={` z-30  absolute top-0  left-0  bg-white ease-in-out duration-1000 overflow-x-hidden w-0 lg:hidden ${
+        openMenu ? " translate-x-0 w-full " : "translate-x-full  "
+      }  `}>
       <nav className="pb-2 sticky top-0 left-0 bg-white w-full z-40">
         <div className={`  flex justify-between items-center px-5 py-2`}>
           <div className="flex items-center">
@@ -55,31 +54,27 @@ function PhoneMenu({ setOpenMenu, openMenu }) {
       <div
         className={` opacity-${
           openMenu ? "100" : "0"
-        } transition-opacity ease-in-out duration-1000 w-full  bg-neutral-100`}
-      >
+        } transition-opacity ease-in-out duration-1000 w-full  bg-neutral-100`}>
         <div className="font-bold bg-white  text-neutral-500   text-sm  space-x-8 mb-4 flex  justify-center items-center ">
           <p
             className={`${
               openSection == 0 && "border-b-2 border-black text-black"
             } cursor-pointer py-3  `}
-            onClick={() => setOpenSection(0)}
-          >
+            onClick={() => setOpenSection(0)}>
             WOMEN
           </p>
           <p
             className={`${
               openSection == 1 && "border-b-2 border-black text-black"
             } cursor-pointer py-3  `}
-            onClick={() => setOpenSection(1)}
-          >
+            onClick={() => setOpenSection(1)}>
             MEN
           </p>
           <p
             className={`${
               openSection == 2 && "border-b-2 border-black text-black"
             } cursor-pointer py-3  `}
-            onClick={() => setOpenSection(2)}
-          >
+            onClick={() => setOpenSection(2)}>
             ACCESSORIES
           </p>
         </div>

@@ -12,8 +12,7 @@ import PhoneMenu from "./PhoneMenu";
 import PcMenu from "./PcMenu";
 import { Men, Woman, accessories } from "../constants/Menu";
 
-function Navbar() {
-  const [openMenu, setOpenMenu] = useState(false);
+function Navbar({ openMenu, setOpenMenu }) {
   const [openSection, setOpenSection] = useState(3);
   console.log("open", openSection);
   return (
@@ -42,22 +41,19 @@ function Navbar() {
           <div
             className="group cursor-pointer px-[40px]  "
             onMouseEnter={() => setOpenSection(0)}
-            onMouseLeave={() => setOpenSection(3)}
-          >
+            onMouseLeave={() => setOpenSection(3)}>
             <p className="py-6 group-hover:border-b-2  border-black">WOMEN</p>
           </div>
           <p
             className="cursor-pointer  px-[40px] group "
             onMouseEnter={() => setOpenSection(1)}
-            onMouseLeave={() => setOpenSection(3)}
-          >
+            onMouseLeave={() => setOpenSection(3)}>
             <p className="py-6 group-hover:border-b-2  border-black"> MEN</p>
           </p>
           <p
             className="cursor-pointer  px-[40px] group"
             onMouseEnter={() => setOpenSection(2)}
-            onMouseLeave={() => setOpenSection(3)}
-          >
+            onMouseLeave={() => setOpenSection(3)}>
             <p className="py-6 group-hover:border-b-2  border-black">
               ACCESSORIES
             </p>
