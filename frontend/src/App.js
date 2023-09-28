@@ -17,6 +17,17 @@ import twoP from "./assets/twoP.webp";
 import sportL from "./assets/sportL.webp";
 import sportP from "./assets/sportP.webp";
 import { useState } from "react";
+import TBAR from "./assets/T-Bar.webp";
+import Leggins from "./assets/Leggins.webp";
+import Oversize from "./assets/oversized.webp";
+import Tight from "./assets/tight.webp";
+import seamlessleggigns from "./assets/seamlessleggigns.webp";
+import seamlessvital from "./assets/seamlessvital.webp";
+import seamlessvital2 from "./assets/seamlessvital2.webp";
+import seamlesscroptop from "./assets/seamlesscroptop.webp";
+
+import Shop from "./components/Shop";
+import Collection from "./components/Collection";
 
 function App() {
   const womenData = {
@@ -53,6 +64,111 @@ function App() {
     paragraphe: "They’re called bestsellers for a reason.",
     button: "SHOP NOW",
   };
+
+  const newReleasesShop = [
+    {
+      img: TBAR,
+      title: "Legacy T-Bar Sports Bra",
+      p: "Light Support",
+      color: "white",
+      price: "US$45",
+      rate: 4.4,
+    },
+    {
+      img: Leggins,
+      title: "Legacy Leggings",
+      p: "Body Fit",
+      color: "Black",
+      price: "US$55",
+      rate: 4.7,
+    },
+    {
+      img: Oversize,
+      title: "Legacy Oversized Sweatshirt",
+      p: "Oversized",
+      color: "Black",
+      price: "US$75",
+      rate: 5,
+    },
+    {
+      img: Tight,
+      title: "Legacy Tight Shorts",
+      p: "Body Fit",
+      color: "Deep Olive Green",
+      price: "US$50",
+      rate: 5,
+    },
+  ];
+
+  const seamlessShop = [
+    {
+      img: seamlessleggigns,
+      title: "Sweat Seamless Leggings",
+      p: "Body Fit",
+      color: "Plum Pink",
+      price: "US$75",
+      rate: 4,
+    },
+    {
+      img: seamlesscroptop,
+      title: "Sweat Seamless Long Sleeve Crop Top",
+      p: "Body Fit",
+      color: "Regular Fit",
+      price: "US$55",
+      rate: 4.3,
+    },
+    {
+      img: seamlessvital,
+      title: "VITAL SEAMLESS 2.0 LEGGINGS",
+      p: "Oversized",
+      color: "Brown Marl",
+      price: "US$75",
+      rate: 5,
+    },
+    {
+      img: seamlessvital2,
+      title: "Legacy Tight Shorts",
+      p: "Body Fit",
+      color: "Deep Olive Green",
+      price: "US$50",
+      rate: 5,
+    },
+  ];
+  const elevateShop = [
+    {
+      img: seamlessleggigns,
+      title: "Sweat Seamless Leggings",
+      p: "Body Fit",
+      color: "Plum Pink",
+      price: "US$75",
+      rate: 4,
+    },
+    {
+      img: seamlessvital2,
+      title: "Legacy Tight Shorts",
+      p: "Body Fit",
+      color: "Deep Olive Green",
+      price: "US$50",
+      rate: 5,
+    },
+
+    {
+      img: Leggins,
+      title: "Legacy Leggings",
+      p: "Body Fit",
+      color: "Black",
+      price: "US$55",
+      rate: 4.7,
+    },
+    {
+      img: Oversize,
+      title: "Legacy Oversized Sweatshirt",
+      p: "Oversized",
+      color: "Black",
+      price: "US$75",
+      rate: 5,
+    },
+  ];
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
@@ -72,6 +188,7 @@ function App() {
             button: "md:bg-white md:text-black",
           }}
         />
+        <Shop title={"NEW RELEASES"} data={newReleasesShop} />
 
         <Women
           imagePhone={womenP}
@@ -83,6 +200,7 @@ function App() {
             button: "md:bg-black md:text-white",
           }}
         />
+        <Shop title={"SEAMLESS"} data={seamlessShop} />
 
         <Women
           imagePhone={soloP}
@@ -94,6 +212,8 @@ function App() {
             button: "md:bg-black md:text-white",
           }}
         />
+        <Shop title={"ELEVATE"} data={elevateShop} />
+
         <Women
           imagePhone={deuuxP}
           imageLarge={deuux}
@@ -105,6 +225,8 @@ function App() {
             one: true,
           }}
         />
+        <Shop title={"FIND"} data={newReleasesShop} />
+
         <Women
           imagePhone={twoP}
           imageLarge={twoL}
@@ -115,6 +237,8 @@ function App() {
             button: "md:bg-white md:text-black",
           }}
         />
+        <Shop title={"TWO IN ONE"} data={elevateShop} />
+
         <Women
           imagePhone={sportP}
           imageLarge={sportL}
@@ -125,6 +249,8 @@ function App() {
             button: "md:bg-black md:text-white",
           }}
         />
+        <Shop title={"THE BEST"} data={seamlessShop} />
+        <Collection />
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ function Women({ imagePhone, imageLarge, data, style }) {
       <img
         src={imageLarge}
         alt="women"
-        className="w-full h-full md:h-[60vh] lg:h-[67vh] hidden md:block  "
+        className="w-full h-full md:h-[60vh] lg:h-[90vh] hidden md:block  "
       />
 
       <div className="absolute bottom-0 hidden left-0 w-full h-full bg-black bg-opacity-20" />
