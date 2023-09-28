@@ -6,7 +6,7 @@ function Vendeur({ data }) {
   return (
     <div className=" mx-2 lg:mx-1  pb-8  lg:w-[22.5vw]  ">
       <div className="relative">
-        <img src={data.img} alt="photom" className="h-[400px]" />
+        <img src={data.img} alt="photom" className="h-[400px] lg:h-[350px]" />
         <div className="p-2">
           <div className="flex items-center space-x-1 text-xs font-semibold">
             <AiFillStar />

@@ -37,7 +37,7 @@ function Collection() {
                   <img
                     src={elem.img}
                     alt="photom"
-                    className="rounded-md h-[500px]"
+                    className="rounded-md h-[400px] lg:h-[350px] "
                   />
                   <div className="p-2">
                     <div className="absolute bottom-12 py-1 px-5 left-10 m-auto font-medium bg-white rounded-full flex justify-center items-center cursor-pointer">
